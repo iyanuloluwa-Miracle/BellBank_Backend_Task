@@ -1,6 +1,5 @@
-const sequelize = require('../src/db');
-const Property = require('../src/models.property');
-const Booking = require('../src/models.booking');
+
+const { sequelize, Property, Booking } = require('../src/db');
 
 beforeAll(async () => {
   await sequelize.sync({ force: true });

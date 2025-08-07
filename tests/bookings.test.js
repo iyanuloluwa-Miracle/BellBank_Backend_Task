@@ -1,7 +1,8 @@
+
 const request = require('supertest');
 const express = require('express');
-const bookingsRouter = require('../src/routes.bookings');
-const propertiesRouter = require('../src/routes.properties');
+const bookingsRouter = require('../src/routes/bookings');
+const propertiesRouter = require('../src/routes/properties');
 const { sequelize, Property, Booking } = require('./setup');
 
 const app = express();
