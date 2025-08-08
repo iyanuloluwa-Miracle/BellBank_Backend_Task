@@ -1,4 +1,3 @@
-
 const { sequelize, Property, Booking } = require('../src/db');
 
 beforeAll(async () => {
@@ -21,6 +20,10 @@ beforeAll(async () => {
       available_to: '2025-08-25',
     },
   ]);
+});
+
+afterAll(async () => {
+  await sequelize.close();
 });
 
 module.exports = { sequelize, Property, Booking };
