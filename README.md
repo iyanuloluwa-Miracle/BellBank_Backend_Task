@@ -116,3 +116,31 @@ Updates a booking (bonus).
 - Bookings cannot overlap or be outside property availability.
 - See code comments for more details.
 - Demo properties are auto-seeded on first run if the database is empty.
+
+## Test Cases
+
+### Integration Tests
+
+- **GET /properties**
+  - Should return a list of all properties (status 200, non-empty array).
+- **GET /properties/:id/availability**
+  - Should return the availability for a property (status 200, correct property_id, array of available ranges).
+- **POST /bookings**
+  - Should create a booking with valid data (status 201, correct user_name).
+  - Should not allow overlapping bookings (status 400, error message about overlap).
+- **DELETE /bookings/:id**
+  - Should delete a booking (status 200, confirmation message).
+
+### Unit Tests (Booking Service)
+
+- Should create a booking with valid data (returns booking object with correct user_name).
+- Should not allow overlapping bookings (throws error with overlap message).
+
+### How to Run
+
+Run all tests:
+```sh
+npm test
+```
+
+All tests are located in the `tests/` directory and cover both HTTP endpoints and core service logic.
