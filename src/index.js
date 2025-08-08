@@ -4,8 +4,9 @@ const swaggerJsdoc = require('swagger-jsdoc');
 
 const propertiesRouter = require('./routes/properties');
 const bookingsRouter = require('./routes/bookings');
-const { sequelize } = require('./db');
+const { sequelize, Property } = require('./db');
 const errorHandler = require('./middleware/errorHandler');
+const seedProperties = require('./db/seed');
 require('dotenv').config();
 
 const app = express();
@@ -39,6 +40,7 @@ const PORT = process.env.PORT || 3000;
 
 sequelize.authenticate()
   .then(() => sequelize.sync())
+  .then(seedProperties)
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
