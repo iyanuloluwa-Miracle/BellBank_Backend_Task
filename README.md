@@ -2,6 +2,12 @@
 
 A simple property rental backend API (like Airbnb/Booking.com) built with Node.js, Express, Sequelize, and PostgreSQL.
 
+
+## Demo & Test Results
+
+- **Live Demo:** [Add your deployed API link here](https://your-live-api-link.com)
+- **Test Results Screenshot:** ![Test Results Screenshot](./images/test-cases.png)
+
 ## Features
 - List properties
 - View property availability
@@ -144,3 +150,7 @@ npm test
 ```
 
 All tests are located in the `tests/` directory and cover both HTTP endpoints and core service logic.
+
+
+
+
